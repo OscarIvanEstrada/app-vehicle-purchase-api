@@ -42,6 +42,13 @@ public class ControllerBusiness {
 
 	public void addDataCustomer(CustomerEntity data) {
 		//DONE: Validate data
+		//DONE: Validate data
+		//DONE: Validate data
+		//DONE: Add logs
+		//DONE: Add logs
+		//DONE: Add logs
+		//DONE: Add logs
+		//DONE: Add logs
 		//TODO: Validate data
 		if(data.getCustomerId() == null || data.getCustomerId().isEmpty()){
 			throw new ApiException(ErrorEnum.VALIDATION,"customerId is required");

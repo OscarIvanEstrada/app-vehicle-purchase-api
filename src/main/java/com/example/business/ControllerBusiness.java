@@ -41,10 +41,13 @@ public class ControllerBusiness {
     CustomerRepository customerRepository;
 
 	public void addDataCustomer(CustomerEntity data) {
+		//TODO: Validate data
+		//TODO: Add logs
 		customerRepository.save(data);
 	}
 
 	public List<CustomerEntity> getDataCustomer() {
+		//TODO: Prevent null pointer
 		List<CustomerEntity> result = new ArrayList<CustomerEntity>();
 		customerRepository.findAll().forEach((final CustomerEntity r) -> result.add(r));
 		return result;
@@ -65,6 +68,7 @@ public class ControllerBusiness {
 	}
 
 	public List<OrderEntity> getDataOrder() {
+		//TODO: Prevent null pointer
 		List<OrderEntity> result = new ArrayList<OrderEntity>();
 		orderRepository.findAll().forEach((final OrderEntity r) -> result.add(r));
 		return result;

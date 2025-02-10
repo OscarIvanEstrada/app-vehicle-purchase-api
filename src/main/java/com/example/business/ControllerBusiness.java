@@ -70,7 +70,7 @@ public class ControllerBusiness {
 
 	public List<OrderEntity> getDataOrder() {
 		List<OrderEntity> result = new ArrayList<OrderEntity>();
-		customerRepository.findAll().forEach((final CustomerEntity r) -> result.add(r));
+		orderRepository.findAll().forEach((final OrderEntity r) -> result.add(r));
 		return result;
 	}
 

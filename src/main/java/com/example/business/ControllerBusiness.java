@@ -3,6 +3,8 @@ package com.example.business;
 import com.example.repository.*;
 import com.example.dto.*;
 import com.example.model.*;
+import com.example.exceptions.ApiException;
+import com.example.enums.ErrorEnum;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -52,7 +54,13 @@ public class ControllerBusiness {
     OrderRepository orderRepository;
 
 	public void addDataOrder(OrderEntity data) {
-			//TODO: Validate order entity
+			//DONE: Validate order entity
+		if(data.getCustomerId() == null || data.getCustomerId().isEmpty()){
+			throw new ApiException(ErrorEnum.VALIDATION,"customerId is required");
+		}
+		if(data.getVin() == null || data.getVin().isEmpty()){
+			throw new ApiException(ErrorEnum.VALIDATION,"vin is required");
+		}
 		orderRepository.save(data);
 	}
 

@@ -78,7 +78,7 @@ public class ControllerBusiness {
 		//DONE: Prevent null pointer
 		//TODO: Prevent null pointer
 		List<OrderEntity> result = new ArrayList<OrderEntity>();
-		orderRepository.findAll().forEach((final OrderEntity r) -> result.add(r));
+		customerRepository.findAll().forEach((final CustomerEntity r) -> result.add(r));
 		return result;
 	}
 

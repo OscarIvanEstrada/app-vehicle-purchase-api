@@ -41,12 +41,19 @@ public class ControllerBusiness {
     CustomerRepository customerRepository;
 
 	public void addDataCustomer(CustomerEntity data) {
+		//DONE: Validate data
 		//TODO: Validate data
+		if(data.getCustomerId() == null || data.getCustomerId().isEmpty()){
+			throw new ApiException(ErrorEnum.VALIDATION,"customerId is required");
+		}
+		//DONE: Add logs
 		//TODO: Add logs
+		log.info("addDataCustomer",data);
 		customerRepository.save(data);
 	}
 
 	public List<CustomerEntity> getDataCustomer() {
+		//DONE: Prevent null pointer
 		//TODO: Prevent null pointer
 		List<CustomerEntity> result = new ArrayList<CustomerEntity>();
 		customerRepository.findAll().forEach((final CustomerEntity r) -> result.add(r));
@@ -68,6 +75,7 @@ public class ControllerBusiness {
 	}
 
 	public List<OrderEntity> getDataOrder() {
+		//DONE: Prevent null pointer
 		//TODO: Prevent null pointer
 		List<OrderEntity> result = new ArrayList<OrderEntity>();
 		orderRepository.findAll().forEach((final OrderEntity r) -> result.add(r));

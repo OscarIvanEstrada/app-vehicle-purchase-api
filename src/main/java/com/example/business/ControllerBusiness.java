@@ -54,7 +54,7 @@ public class ControllerBusiness {
     OrderRepository orderRepository;
 
 	public void addDataOrder(OrderEntity data) {
-			//DONE: Validate order entity
+		
 		if(data.getCustomerId() == null || data.getCustomerId().isEmpty()){
 			throw new ApiException(ErrorEnum.VALIDATION,"customerId is required");
 		}

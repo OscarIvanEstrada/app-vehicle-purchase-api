@@ -1,3 +1,6 @@
+TODO: Add relevant documentation like curls of the services
+TODO: application.yml variable documentation
+
 # app-vehicle-purchase-api
 
 Application for purchasing vehicles.
